@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  
+   eventstore:
+    image: eventstore/eventstore:release-5.0.1
+    container_name: eventstore
+    restart: always
+    ports:
+      - 2113:2113
+      - 1113:1113
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:12113/stats || exit 1"]
+      interval: 5s
+      timeout: 2s
+    environment:
+      - EVENTSTORE_RUN_PROJECTIONS=all
+      - EVENTSTORE_START_STANDARD_PROJECTIONS=TRUE

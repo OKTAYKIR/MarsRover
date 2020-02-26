@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>MarsRover</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EventFlow" Version="0.77.4077" />
+    <PackageReference Include="EventFlow.EventStores.EventStore" Version="0.77.4077" />
+    <PackageReference Include="EventStore.Client" Version="5.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarsRover.Application\MarsRover.Application.csproj" />
+    <ProjectReference Include="..\MarsRover.Core\MarsRover.Core.csproj" />
+  </ItemGroup>
+  
+</Project>
