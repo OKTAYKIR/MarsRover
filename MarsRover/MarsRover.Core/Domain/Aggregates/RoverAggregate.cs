@@ -42,12 +42,9 @@ namespace MarsRover.Core.Domain.Aggregates
             return ExecutionResult.Success();
         }
 
-        public async Task<IExecutionResult> MoveAsync()
+        public IExecutionResult MoveAsync()
         {
-            if(!await IsRoverInsideBoundariesAsync())
-            {
-                throw new InvalidOperationException("Rover outside of bounds");
-            }
+            MoveRoverAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
             Emit(new MoveRoverEvent(Movement.M));
 
@@ -75,7 +72,7 @@ namespace MarsRover.Core.Domain.Aggregates
                     break;
 
                 case Movement.M:
-                    MoveRover();
+                    MoveRoverAsync().GetAwaiter().GetResult();
                     break;
 
                 default:
@@ -137,8 +134,11 @@ namespace MarsRover.Core.Domain.Aggregates
             this.RoverPosition.Orientation = (this.RoverPosition.Orientation - 1) < Orientation.N ? Orientation.W : this.RoverPosition.Orientation - 1;
         }
 
-        private void MoveRover()
+        private async Task MoveRoverAsync()
         {
+            int roverX = this.RoverPosition.X;
+            int roverY = this.RoverPosition.Y;
+
             switch (this.RoverPosition.Orientation)
             {
                 case Orientation.N:
@@ -158,6 +158,13 @@ namespace MarsRover.Core.Domain.Aggregates
 
                 default:
                     throw new InvalidOperationException();
+            }
+
+            if (!await IsRoverInsideBoundariesAsync())
+            {
+                this.RoverPosition.X = roverX;
+                this.RoverPosition.Y = roverY;
+                Console.WriteLine();
             }
         }
         #endregion

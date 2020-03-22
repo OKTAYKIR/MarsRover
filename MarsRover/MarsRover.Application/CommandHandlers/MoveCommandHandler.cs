@@ -16,7 +16,7 @@ namespace MarsRover.Application.CommandHandlers
             MoveCommand command,
             CancellationToken cancellationToken)
         {
-            IExecutionResult executionResult = await aggregate.MoveAsync();
+            IExecutionResult executionResult = aggregate.MoveAsync();
 
             return executionResult;
         }
