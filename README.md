@@ -1,3 +1,4 @@
+![CI](https://github.com/OKTAYKIR/MarsRover/workflows/CI/badge.svg)
 # MarsRover
 Mars Rover problem solution in C# .NET Core, using event sourcing and clean architecture. It's targeted to ASP.NET Core 2.2 and include docker compose file.
 
