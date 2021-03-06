@@ -1,7 +1,6 @@
+# MarsRover
 ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https://github.com/OKTAYKIR/MarsRover)
 ![GitHub issues](https://img.shields.io/github/issues/OKTAYKIR/MarsRover)
-
-# MarsRover
 ![Build Status](https://github.com/OKTAYKIR/MarsRover/workflows/CI/badge.svg)
 
 Mars Rover problem solution in C# .NET Core, using event sourcing and clean architecture. It's targeted to ASP.NET Core 2.2 and include docker compose file.
