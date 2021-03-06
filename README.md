@@ -1,3 +1,6 @@
+![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https://github.com/OKTAYKIR/MarsRover)
+![GitHub issues](https://img.shields.io/github/issues/OKTAYKIR/MarsRover)
+
 # MarsRover
 ![Build Status](https://github.com/OKTAYKIR/MarsRover/workflows/CI/badge.svg)
 
@@ -42,5 +45,8 @@ Input and Output
     1 3 N
     5 1 E
     
+## ✨ Contributors
+![GitHub Contributors Image](https://contrib.rocks/image?repo=OKTAYKIR/MarsRover)
+
 ### 📝 License
 MIT License
